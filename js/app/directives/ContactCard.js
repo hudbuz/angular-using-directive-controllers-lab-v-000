@@ -6,6 +6,7 @@ function ContactCard() {
 			phone: '=',
 			username: '='
 		},
+		controller: 'ContactController as ctrl',
 		template: [
 			'<div>',
 				'<h4>Contact Card</h4>',
@@ -16,9 +17,10 @@ function ContactCard() {
 				'<label>Phone:</label>',
 				'{{ phone }}',
 				'<label>Username:</label>',
-				'<span class="username">{{ username }}</span>',
+				'<span class="username">{{ username.split(" ").join("").toLowerCase() }}</span>',
 			'</div>'
 		].join(''),
+		
 		restrict: 'E'
 	};
 }
